@@ -1,0 +1,14 @@
+#!/bin/sh
+ 
+mount -t devtmpfs none /dev
+mount -t proc none /proc
+mount -t sysfs none /sys
+ 
+echo -e "\nBoot took $(cut -d' ' -f1 /proc/uptime) seconds\n"
+ 
+insmod hello_char.ko
+mknod /dev/globalmem c 230 0
+echo "hello world" > /dev/globalmem
+cat /dev/globalmem
+
+exec /bin/sh
