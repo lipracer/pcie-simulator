@@ -23,16 +23,26 @@ pcie-qemu 是一个qemu跟linux驱动开发的学习项目，最后完成一个p
     ```
     apt install bison flex bc libglib2.0-dev cpio ninja-build
     ```
-4. 编译submodule
+4. 编译qemu
     ```
-    make all -j8
+    make qemu
     ```
-
+5. 编译linux
+   ```
+    make linux
+    ```
+7. 文件系统
+    ```
+    make busybox
+    ```
 
 ## 使用示例
 
 ```shell
+// 测试字符驱动
 make test_char_dev
+// 测试pcie 驱动 dma操作，msix中断
+make boot
 ```
 
 ## 贡献指南
