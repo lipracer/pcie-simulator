@@ -5,7 +5,7 @@ all_drivers all config_qemu qemu test_gpu0 pack_sys_file gen_sys_file
 linux_src=$(PWD)/3-party/linux
 busybox_src=$(PWD)/3-party/busybox
 
-TEST_INDEX:=2
+TEST_INDEX:=3
 
 current_dir:=$(PWD)
 
